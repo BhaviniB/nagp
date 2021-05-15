@@ -1,0 +1,107 @@
+<nav
+  class="navbar navbar-expand-lg navbar-dark bg-dark"
+  style="position: relative"
+>
+  <a class="navbar-brand" (click)="home()"
+    ><img
+      className=""
+      height="30"
+      width="30"
+      src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+      alt="Workflow"
+      style="height: 30px; width: 30px"
+    />
+    {{ "Sitetitle" | translate }}</a
+  >
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <ul class="navbar-nav mr-auto custom-flex-nav">
+    <li class="nav-item active mx-2">
+      <a class="nav-link custom-btn" (click)="viewCart()"
+        >{{ "ViewCart" | translate }}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          style="height: 20px; width: 20px"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+          />
+        </svg>
+        <span class="sr-only">(current)</span></a
+      >
+    </li>
+
+    <li class="nav-item active mx-2">
+      <a *ngIf="isLoggedIn == false" class="simple-nav-links" (click)="login()">
+        {{ "Login" | translate }}<span class="sr-only">(current)</span></a
+      >
+    </li>
+    <li *ngIf="isLoggedIn == true" class="nav-item active mx-2">
+      <a class="simple-nav-links" (click)="logout()" type="submit">
+        {{ "Logout" | translate }}
+      </a>
+    </li>
+  </ul>
+
+  <div
+    class="collapse navbar-collapse absolute-positioning"
+    id="navbarSupportedContent"
+  >
+    <ul class="navbar-nav mr-auto custom-flex-nav">
+      <li class="mx-2">
+        <div class="container">
+          <span class="form-inline">
+            <select
+              class="form-control"
+              #selectedLang
+              (change)="switchLang(selectedLang.value)"
+            >
+              <option
+                class="form-control"
+                *ngFor="let language of translate.getLangs()"
+                [value]="language"
+                [selected]="language === translate.currentLang"
+              >
+                {{ language }}
+              </option>
+            </select>
+          </span>
+        </div>
+      </li>
+      <li
+        class="mx-2 name"
+        *ngIf="
+          currentUser.username != null && currentUser.username != undefined
+        "
+      >
+        {{ "Hello" | translate }}, {{ currentUser.username }}!
+      </li>
+      <li
+        *ngIf="
+          currentUser.username != null && currentUser.username != undefined
+        "
+      >
+        <img
+          src="https://avatars.githubusercontent.com/u/29710418?v=4"
+          style="height: 30px; width: 30px; border-radius: 50px"
+        />
+      </li>
+    </ul>
+  </div>
+</nav>

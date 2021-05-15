@@ -1,0 +1,17 @@
+<p></p>
+
+<div
+  class="card"
+  style="width: 18rem"
+  *ngIf="product != null && product != undefined"
+>
+  <img class="card-img-top" src="{{ product.image }}" alt="Card image cap" />
+  <div class="card-body">
+    <h5 class="card-title">{{ product.name }}</h5>
+    <!-- <p class="card-text">Description: {{ product.description }}</p> -->
+    <p class="card-text">₹ {{ product.price }}</p>
+    <a (click)="displayDetails(product.Id)" class="custom-btn">{{
+      "Details" | translate
+    }}</a>
+  </div>
+</div>

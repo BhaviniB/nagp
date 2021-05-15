@@ -1,0 +1,37 @@
+<!-- <p>{{ currentProduct.name }}</p>
+<p>{{ currentProduct.category }}</p>
+<p>{{ currentProduct.description }}</p> -->
+
+<div class="flex" *ngIf="currentProduct != undefined && currentProduct != null">
+  <div>
+    <img
+      class="card-img-top"
+      src="{{ currentProduct.image }}"
+      alt="Card image cap"
+    />
+  </div>
+  <div>
+    <div class="card-body">
+      <h5 class="card-title">{{ currentProduct.name }}</h5>
+      <hr class="hr" />
+      <p>{{ "Price" | translate }}: ₹ {{ currentProduct.price }}</p>
+      <p class="card-text">{{ currentProduct.description }}</p>
+      <div class="flex-custom">
+        <p class="tags" *ngFor="let tag of currentProduct.tags">{{ tag }}</p>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <select
+        id="quantity"
+        class="form-control"
+        (change)="onQuantityChange($event.target.value)"
+      >
+        <option *ngFor="let quantity of quantityArray">{{ quantity }}</option>
+      </select>
+      <a (click)="addToCart(currentProduct)" class="card-link add-to-cart">{{
+        "AddToCart" | translate
+      }}</a>
+    </div>
+  </div>
+</div>

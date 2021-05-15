@@ -1,0 +1,104 @@
+.custom-grid {
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.col {
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+
+.custom-flex {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: center;
+}
+.custom-flex-dropdowns {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: center;
+  background: #e5e7eb;
+  padding: 40px;
+}
+.custom-flex-categories {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: start;
+  margin-left: 12px;
+}
+.category {
+  padding: 3px 6px;
+  color: #fff;
+  background: #059669;
+  margin: 0px 2px;
+  border-radius: 4px;
+}
+.sub-category {
+  padding: 3px 6px;
+  color: #fff;
+  background: #4f46e5;
+  margin: 0px 2px;
+  border-radius: 4px;
+}
+
+.carousel {
+  margin: 10px;
+}
+.my-20 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.my-20 .dropdown {
+  margin-left: 10px;
+  margin-right: 10px;
+  /* background-color: #000; */
+}
+.carousel img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.sidebar {
+  height: 100%;
+  background: #343a40;
+  border-radius: 5px;
+  padding: 10px;
+  color: #f9fafb;
+  padding: 20px;
+  min-width: 250px;
+  margin-left: 10px;
+  margin-bottom: -5000px;
+  padding-bottom: 5000px;
+  /* position: fixed;
+  top: 0;
+  left: 0; */
+  /* position: absolute;
+  top: 0;
+  left: 0; */
+}
+.sidebar input {
+  margin: 10px 0px;
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+
+.min-height {
+  min-height: 500px;
+}

@@ -1,0 +1,119 @@
+.flex {
+  display: flex;
+  text-align: left;
+}
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.banner {
+  background: #ef4444;
+  color: #fff;
+  border-radius: 3px;
+  /* padding: 2px; */
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  padding-left: 10px;
+}
+
+input {
+  border: 1px solid #d1d5db !important;
+  border-radius: 0px !important;
+}
+.spacing-x {
+  margin: 0px 10px;
+}
+.flex select {
+  outline: none;
+  padding: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.flex button {
+  border: none;
+  padding: 10px;
+  background: #059669;
+  color: #f9fafb;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.coupon-code {
+  background: transparent;
+  color: #fff;
+  margin-left: 10px;
+  border-radius: 5px !important;
+  border: 1px solid #b91c1c !important;
+}
+
+.apply {
+  text-decoration: none;
+  color: #fff;
+  background: #b91c1c;
+  border-radius: 5px;
+  margin-left: 5px;
+  padding: 4px 10px;
+}
+.flex input {
+  /* margin-left: 20px; */
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 4px;
+  padding-right: 4px;
+  border-radius: 8px;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  font-weight: 100;
+}
+
+.cart-pay {
+  border: none;
+  margin: 10px 0px;
+  width: 100%;
+  padding: 5px;
+  border: 2px solid #059669 !important;
+  border-radius: 20px;
+  color: #059669;
+}
+.flex label {
+  display: block;
+  margin-top: 10px;
+}
+
+label {
+  display: block;
+}
+.relative {
+  position: relative;
+}
+.custom-bg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #1f2937;
+  background-repeat: no-repeat;
+  background-image: url("/assets/images/signup-bg.png");
+  background-size: cover;
+  z-index: -10;
+}
+
+.mx-auto {
+  margin: 0 auto;
+  text-align: center;
+}
