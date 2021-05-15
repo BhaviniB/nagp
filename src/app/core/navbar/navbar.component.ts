@@ -49,6 +49,7 @@ export class NavbarComponent implements OnInit {
     if (localStorage.getItem('username')) {
 
       this.currentUser.username = localStorage.getItem('username').slice(1, -1);
+      this.isLoggedIn = true;
     }
     this.allProducts = dataFromJson;
   }
