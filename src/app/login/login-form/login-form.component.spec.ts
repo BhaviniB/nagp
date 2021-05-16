@@ -4,10 +4,12 @@ import { LoginFormComponent } from './login-form.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule } from '@angular/forms';
-
 
 describe('LoginFormComponent', () => {
   let component: LoginFormComponent;
@@ -15,11 +17,15 @@ describe('LoginFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LoginFormComponent ],
-      imports:[ TranslateModule.forRoot(), RouterTestingModule, HttpClientTestingModule, ToastrModule.forRoot(), ReactiveFormsModule]
-      
-    })
-    .compileComponents();
+      declarations: [LoginFormComponent],
+      imports: [
+        TranslateModule.forRoot(),
+        RouterTestingModule,
+        HttpClientTestingModule,
+        ToastrModule.forRoot(),
+        ReactiveFormsModule,
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -35,7 +35,6 @@ export class ProductService {
     }
   }
 
-
   addItemToCart(currentItem) {
     var jdx = this.cart.findIndex((x) => x.Id === currentItem.Id);
     if (jdx != -1) {
@@ -87,13 +86,13 @@ export class ProductService {
 
   filterByPrice(price) {
     let res;
-    if (price == 'Less than 500') {
+    if (price == '< ₹ 500') {
       res = this.allProducts.filter((product) => product.price < 500);
-    } else if (price == '500 to 1000') {
+    } else if (price == '₹ 500 - ₹ 1000') {
       res = this.allProducts.filter(
         (product) => product.price > 500 && product.price <= 1000
       );
-    } else if (price == '1000 and above') {
+    } else if (price == '> ₹ 1000') {
       res = this.allProducts.filter((product) => product.price > 1000);
     } else {
       res = this.allProducts;

@@ -14,12 +14,14 @@ export class CartComponent implements OnInit {
   quantityArray: number[] = [];
   selected: any;
 
-  constructor(private productService: ProductService, private router: Router, 
+  constructor(
+    private productService: ProductService,
+    private router: Router,
     private notificationService: NotificationService
-    ) {}
+  ) {}
 
   ngOnInit(): void {
-    this.notificationService.showSuccess("Here's your cart!","");
+    this.notificationService.showSuccess("Here's your cart!", '');
     for (let i = 1; i < 101; i++) {
       this.quantityArray.push(i);
     }
@@ -62,7 +64,7 @@ export class CartComponent implements OnInit {
 
   removeItem(Id) {
     this.productService.removeItemFromCart(Id);
-    this.notificationService.showInfo("Product removed!","");
+    this.notificationService.showInfo('Product removed!', '');
   }
 
   checkOut() {
@@ -72,10 +74,11 @@ export class CartComponent implements OnInit {
       this.cartItems.length != 0
     ) {
       this.router.navigate(['/checkout']);
-    }
-    else{
-    this.notificationService.showError("There are no items in your cart. Add some :)","");
-
+    } else {
+      this.notificationService.showError(
+        'There are no items in your cart. Add some :)',
+        ''
+      );
     }
   }
 }

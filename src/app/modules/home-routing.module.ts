@@ -11,26 +11,26 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 const routes: Routes = [
   {
     path: 'product-grid',
-    component: ProductGridComponent
+    component: ProductGridComponent,
   },
   {
-    path:'product-detail/:id', 
-    component: ProductDetailComponent
+    path: 'product-detail/:id',
+    component: ProductDetailComponent,
   },
   {
-    path:'cart',
+    path: 'cart',
     canActivate: [AuthGuard],
-    component: CartComponent
+    component: CartComponent,
   },
   {
-    path:'checkout',
-    component: CheckoutComponent
-  }
+    path: 'checkout',
+    component: CheckoutComponent,
+  },
 ];
 
 @NgModule({
   declarations: [],
   imports: [CommonModule, RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class HomeRoutingModule {}

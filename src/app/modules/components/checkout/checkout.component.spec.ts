@@ -4,7 +4,10 @@ import { CheckoutComponent } from './checkout.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 import { ToastrModule } from 'ngx-toastr';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -14,11 +17,15 @@ describe('CheckoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CheckoutComponent ],
-      imports:[ TranslateModule.forRoot(), RouterTestingModule, HttpClientTestingModule, ToastrModule.forRoot(), ReactiveFormsModule ]
-
-    })
-    .compileComponents();
+      declarations: [CheckoutComponent],
+      imports: [
+        TranslateModule.forRoot(),
+        RouterTestingModule,
+        HttpClientTestingModule,
+        ToastrModule.forRoot(),
+        ReactiveFormsModule,
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -4,7 +4,10 @@ import { ProductComponent } from './product.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 import { ToastrModule } from 'ngx-toastr';
 
 describe('ProductComponent', () => {
@@ -13,11 +16,14 @@ describe('ProductComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductComponent ],
-      imports:[ TranslateModule.forRoot(), RouterTestingModule, HttpClientTestingModule, ToastrModule.forRoot()]
-
-    })
-    .compileComponents();
+      declarations: [ProductComponent],
+      imports: [
+        TranslateModule.forRoot(),
+        RouterTestingModule,
+        HttpClientTestingModule,
+        ToastrModule.forRoot(),
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {

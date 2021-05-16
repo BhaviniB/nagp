@@ -32,7 +32,6 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.productService.currentLang.subscribe((res) => {
       this.currentLang = res;
     });
@@ -47,7 +46,6 @@ export class NavbarComponent implements OnInit {
     });
 
     if (localStorage.getItem('username')) {
-
       this.currentUser.username = localStorage.getItem('username').slice(1, -1);
       this.isLoggedIn = true;
     }
@@ -75,7 +73,7 @@ export class NavbarComponent implements OnInit {
   logout() {
     this.isLoggedIn = false;
     this.authenticationService.logout();
-    this.notificationService.showInfo("You have been logged out!","")
+    this.notificationService.showInfo('You have been logged out!', '');
   }
   filterByCategory(category) {
     this.productService.filterByCategory(category);

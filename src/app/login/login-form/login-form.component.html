@@ -1,6 +1,13 @@
 <div class="login-container">
   <div
-    class="custom-bg absolute top-0 w-full h-full bg-blueGray-800 bg-no-repeat bg-full"
+    class="
+      custom-bg
+      absolute
+      top-0
+      w-full
+      h-full
+      bg-blueGray-800 bg-no-repeat bg-full
+    "
     style="background-image: url('/assets/images/signup-bg.png')"
   ></div>
   <div class="logo"></div>
@@ -11,36 +18,52 @@
     </div>
     <ng-container [formGroup]="form" *ngIf="form">
       <div class="custom-flex">
-        <label>{{'UserName'| translate}}</label>
+        <label>{{ "UserName" | translate }}</label>
         <input
           class="input-form"
           type="text"
-          placeholder="{{'EnterUsername'| translate}}"
+          placeholder="{{ 'EnterUsername' | translate }}"
           formControlName="username"
         />
-        <div *ngIf="form.get('username').errors && (form.controls['username'].dirty || form.controls['username'].touched)">
+        <div
+          *ngIf="
+            form.get('username').errors &&
+            (form.controls['username'].dirty ||
+              form.controls['username'].touched)
+          "
+        >
           <div *ngIf="form.get('username').hasError('required')">
-            <span style="color: #ef4444">{{'PleaseEnterUsername'| translate}}</span>
+            <span style="color: #ef4444">{{
+              "PleaseEnterUsername" | translate
+            }}</span>
           </div>
         </div>
 
-        <label style="padding-top: 20px">{{'Password'| translate}}</label>
+        <label style="padding-top: 20px">{{ "Password" | translate }}</label>
         <input
           class="input-form"
           type="password"
-          placeholder="{{'EnterPassword'| translate}}"
+          placeholder="{{ 'EnterPassword' | translate }}"
           formControlName="password"
         />
 
-        <div *ngIf="form.get('password').errors  && (form.controls['password'].dirty || form.controls['password'].touched)">
+        <div
+          *ngIf="
+            form.get('password').errors &&
+            (form.controls['password'].dirty ||
+              form.controls['password'].touched)
+          "
+        >
           <div *ngIf="form.get('password').hasError('required')">
-            <span style="color: #ef4444">{{'PleaseEnterPassword'| translate}}</span>
+            <span style="color: #ef4444">{{
+              "PleaseEnterPassword" | translate
+            }}</span>
           </div>
         </div>
         <div *ngIf="form.get('password').hasError('pattern')">
-          <span style="color: #ef4444"
-            >{{'TheProvidedPasswordDoesNotMatchTheRequiredPattern'| translate}}</span
-          >
+          <span style="color: #ef4444">{{
+            "TheProvidedPasswordDoesNotMatchTheRequiredPattern" | translate
+          }}</span>
         </div>
       </div>
 
@@ -49,13 +72,10 @@
           class="app-button primary login-btn-custom"
           [disabled]="form.invalid"
           (click)="login()"
-          
         >
-        
-          {{'Login'| translate}}
+          {{ "Login" | translate }}
         </button>
       </div>
     </ng-container>
   </div>
 </div>
-

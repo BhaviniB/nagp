@@ -1,9 +1,8 @@
 import { ProductService } from './../../shared/services/product.service';
-// filter.pipe.ts
 
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe ({name:'appFilter'})
+@Pipe({ name: 'appFilter' })
 export class FilterPipe implements PipeTransform {
   /**
    * Transform

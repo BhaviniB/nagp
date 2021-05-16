@@ -5,9 +5,12 @@ import { ProductGridComponent } from './product-grid.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 import { ToastrModule } from 'ngx-toastr';
-import { Pipe} from '@angular/core';
+import { Pipe } from '@angular/core';
 import { FilterPipe } from '@app-core/pipes/filter.pipe';
 
 describe('ProductGridComponent', () => {
@@ -16,11 +19,15 @@ describe('ProductGridComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductGridComponent, FilterPipe ],
-      imports:[ TranslateModule.forRoot(), RouterTestingModule, HttpClientTestingModule, ToastrModule.forRoot(),  CoreModule ]
-
-    })
-    .compileComponents();
+      declarations: [ProductGridComponent, FilterPipe],
+      imports: [
+        TranslateModule.forRoot(),
+        RouterTestingModule,
+        HttpClientTestingModule,
+        ToastrModule.forRoot(),
+        CoreModule,
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {

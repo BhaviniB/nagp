@@ -62,7 +62,6 @@
 .my-20 .dropdown {
   margin-left: 10px;
   margin-right: 10px;
-  /* background-color: #000; */
 }
 .carousel img {
   height: 400px;
@@ -84,12 +83,6 @@
   margin-left: 10px;
   margin-bottom: -5000px;
   padding-bottom: 5000px;
-  /* position: fixed;
-  top: 0;
-  left: 0; */
-  /* position: absolute;
-  top: 0;
-  left: 0; */
 }
 .sidebar input {
   margin: 10px 0px;

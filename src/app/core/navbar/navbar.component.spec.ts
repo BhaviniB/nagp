@@ -5,9 +5,11 @@ import { NavbarComponent } from './navbar.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 import { ToastrModule } from 'ngx-toastr';
-
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -15,10 +17,14 @@ describe('NavbarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[ TranslateModule.forRoot(), RouterTestingModule, HttpClientTestingModule, ToastrModule.forRoot()],
-      declarations: [ NavbarComponent ]
-    })
-    .compileComponents();
+      imports: [
+        TranslateModule.forRoot(),
+        RouterTestingModule,
+        HttpClientTestingModule,
+        ToastrModule.forRoot(),
+      ],
+      declarations: [NavbarComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

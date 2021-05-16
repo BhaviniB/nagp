@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CheckoutComponent implements OnInit {
   form: FormGroup;
+  
 
   constructor(
     private productService: ProductService,
@@ -18,8 +19,12 @@ export class CheckoutComponent implements OnInit {
     private notificationService: NotificationService,
     private router: Router
   ) {}
+
   cartItems;
   isApplyDiscountClicked: boolean = false;
+  finalTotal: number;
+
+
   ngOnInit(): void {
     this.createForm();
     this.cartItems = this.productService.cart;
@@ -57,10 +62,10 @@ export class CheckoutComponent implements OnInit {
   applyDiscount() {
     this.isApplyDiscountClicked = true;
     this.notificationService.showSuccess('Discount applied', '');
-
     let total = this.getTotal();
     let discountedPrice = total / 2;
     return discountedPrice;
+   
   }
   createForm() {
     this.form = this.fb.group({

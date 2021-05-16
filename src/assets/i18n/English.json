@@ -68,5 +68,11 @@
   "Beauty": "Beauty",
   "Clothing": "Clothing",
   "Billing": "Billing",
-  "YourOrder": "Your Order"
+  "YourOrder": "Your Order",
+  "YourCart":"Your Cart",
+  "SubTotal":"Sub Total",
+  "TotalIncludingGST": "Total (including Shipping, GST)",
+  "Product":"Product",
+  "CouponCode":"Have a coupon code? Enter your code here:",
+  "Apply":"Apply"
 }

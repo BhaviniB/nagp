@@ -10,7 +10,7 @@ import { Product } from 'src/app/shared/models/product';
 export class ProductGridComponent implements OnInit {
   data: Product[];
   public searchInput: string;
-  priceRange = ['All', 'Less than 500', '500 to 1000', '1000 and above'];
+  priceRange = ['All', '< ₹ 500', '₹ 500 - ₹ 1000', '> ₹ 1000'];
   selectedPrice = '';
 
   constructor(private productService: ProductService) {}

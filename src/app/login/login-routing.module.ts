@@ -4,7 +4,7 @@ import { Routes } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
 import { LoginComponent } from './login.component';
-import { LoginFormComponent } from './login-form/login-form.component'
+import { LoginFormComponent } from './login-form/login-form.component';
 
 const routes: Routes = [
   {
@@ -13,20 +13,20 @@ const routes: Routes = [
     children: [
       {
         path: 'login-form',
-        component: LoginFormComponent
+        component: LoginFormComponent,
       },
       {
         path: '',
         redirectTo: 'login-form',
-        pathMatch: 'full'
-      }
-    ]
-  }
+        pathMatch: 'full',
+      },
+    ],
+  },
 ];
 
 @NgModule({
   declarations: [],
   imports: [CommonModule, RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class LoginRoutingModule {}

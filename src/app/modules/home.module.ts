@@ -14,7 +14,6 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
@@ -31,7 +30,7 @@ import {
     ProductComponent,
     CartComponent,
     CheckoutComponent,
-    FilterPipe
+    FilterPipe,
   ],
   imports: [
     CommonModule,

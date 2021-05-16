@@ -1,10 +1,4 @@
 <div class="main container">
-  <div class="banner">
-    <span>Have a coupon code? Enter your code here: </span>
-
-    <input type="text" name="coupon" value="HAPPY50" class="coupon-code" />
-    <a (click)="applyDiscount()" class="apply">Apply</a>
-  </div>
   <div class="row mx-auto">
     <div class="billing col">
       <div class="content">
@@ -21,7 +15,9 @@
                 <label>{{ "FirstName" | translate }}</label>
                 <input
                   type="text"
-                  placeholder="Enter first name"
+                  placeholder="{{
+                    'PleaseEnterFirstName' | translate
+                  }}"
                   formControlName="firstName"
                 />
 
@@ -59,7 +55,9 @@
                 <label>{{ "LastName" | translate }}</label>
                 <input
                   type="text"
-                  placeholder="Enter last name"
+                  placeholder="{{
+                    'PleaseEnterLastName'| translate
+                  }}"
                   formControlName="lastName"
                 />
 
@@ -97,7 +95,9 @@
               <label> {{ "PhoneNumber" | translate }}</label>
               <input
                 type="text"
-                placeholder="Enter address line 1"
+                placeholder="{{
+                  'PleaseEnterPhoneNumber' | translate
+                }}"
                 formControlName="phoneNumber"
               />
 
@@ -125,7 +125,9 @@
               <label>{{ "Email" | translate }}</label>
               <input
                 type="text"
-                placeholder="Enter address line 1"
+                placeholder="{{
+                  'PleaseEnterEmail' | translate
+                }}"
                 formControlName="email"
               />
 
@@ -160,10 +162,12 @@
             </div>
 
             <div class="flex flex-col spacing-x">
-              <label>Address Line 1</label>
+              <label>{{'AddressLine1'| translate}}</label>
               <input
                 type="text"
-                placeholder="Enter address line 1"
+                placeholder="{{
+                  'PleaseEnterAddLine1' | translate
+                }}"
                 formControlName="addLine1"
               />
               <div
@@ -182,10 +186,12 @@
             </div>
 
             <div class="flex flex-col spacing-x">
-              <label>Address Line 2</label>
+              <label>{{'AddressLine2'| translate}}</label>
               <input
                 type="text"
-                placeholder="Enter address line 1"
+                placeholder="{{
+                  'PleaseEnterAddLine2' | translate
+                }}"
                 formControlName="addLine2"
               />
               <div
@@ -204,10 +210,10 @@
             </div>
 
             <div class="flex flex-col spacing-x">
-              <label>City/ Town</label>
+              <label>{{'CityTown'| translate}}</label>
               <input
                 type="text"
-                placeholder="{{'PleaseEnterCity'| translate}}"
+                placeholder="{{ 'PleaseEnterCity' | translate }}"
                 formControlName="city"
               />
 
@@ -232,10 +238,12 @@
             </div>
 
             <div class="flex flex-col spacing-x">
-              <label>State/ Province/ Region</label>
+              <label>{{'StateProvinceRegion'| translate}}</label>
               <input
                 type="text"
-                placeholder="Enter state/ province/ region"
+                placeholder="{{
+                  'PleaseEnterState' | translate
+                }}"
                 formControlName="state"
               />
 
@@ -261,10 +269,12 @@
             </div>
 
             <div class="flex flex-col spacing-x">
-              <label>Zip / Postal Code</label>
+              <label> {{'ZipPostalCode'| translate}}</label>
               <input
                 type="text"
-                placeholder="Enter address line 1"
+                placeholder="{{
+                  'PleaseEnterZip' | translate
+                }}"
                 formControlName="zip"
               />
 
@@ -298,7 +308,7 @@
             </div>
 
             <div class="flex flex-col spacing-x">
-              <label>Country</label>
+              <label>{{'Country' | translate}}</label>
 
               <select
                 formControlName="country"
@@ -307,7 +317,7 @@
                 class="input-xlarge"
               >
                 <option value="" selected="selected">
-                  (please select a country)
+                  ({{'PleaseSelectACountry'| translate}})
                 </option>
                 <option value="AF">Afghanistan</option>
                 <option value="AL">Albania</option>
@@ -558,75 +568,49 @@
                 <option value="ZW">Zimbabwe</option>
               </select>
             </div>
-
-            <!-- <div>
-              <button [disabled]="form.invalid" (click)="submit()">
-                {{ "Submit" | translate }}
-              </button>
-            </div> -->
           </div>
         </ng-container>
       </div>
     </div>
     <div class="your-order col">
-      <!-- Iterate through your products here to show card items. -->
       <div class="header-section">
         <h2>
           {{ "YourOrder" | translate }}
         </h2>
         <div class="row text-right border">
-          <div class="col border">Product</div>
-          <div class="col border">Total</div>
+          <div class="col border">{{'Product'| translate}}</div>
+          <div class="col border">{{'Total'| translate}}</div>
         </div>
 
-
-        <!-- Iterate here, maybe *ngFor for all the products -->
         <div *ngFor="let product of cartItems">
-                  <div class="row border text-right">
-          <div class="col border">
-            <p>{{product.name}}</p>
-            <p>x {{product.quantity}}</p>
-          </div>
-          <div class="col border">
-            <p>₹ {{product.quantity* product.price}}</p>
+          <div class="row border text-right">
+            <div class="col border">
+              <p>{{ product.name }}</p>
+              <p>x {{ product.quantity }}</p>
+            </div>
+            <div class="col border">
+              <p>₹ {{ product.quantity * product.price }}</p>
+            </div>
           </div>
         </div>
 
-        </div>
-
-        <!-- Subtotal here -->
         <div class="row border text-right">
           <div class="col border">
-            <p>Sub Total</p>
+            <p>{{'SubTotal'| translate}}</p>
           </div>
           <div class="col border">
-            <p>₹ {{getTotal()}}</p>
+            <p>₹ {{ getTotal() }}</p>
           </div>
         </div>
 
-        <!-- Shipping address, take from left form -->
-        <!-- <div class="row text-right border">
-          <div class="col border">
-            <p>Shipping Address</p>
-          </div>
-          <div class="col border">
-            <p>
-              44/256 Gucci Apartment, Near Armani Showroom, Opposite Prada
-              Handbag Factory, Texas, US.
-            </p>
-          </div>
-        </div> -->
-
-        <!-- Total with GST -->
         <div class="row border text-right">
           <div class="col border">
-            <p>Total (including Shipping and GST)+ discount</p>
+            <p>{{'TotalIncludingGST'| translate}}</p>
           </div>
-          <div  *ngIf="isApplyDiscountClicked==true" class="col border">
-            <p>₹ {{getTotal()/2}}</p>
-          </div>
-          <div  *ngIf="isApplyDiscountClicked==false" class="col border">
-            <p>₹ {{getTotal()}}</p>
+         
+
+          <div  class="col border">
+            <p>₹ {{ getTotal() + 290 }}</p>
           </div>
         </div>
         <div>

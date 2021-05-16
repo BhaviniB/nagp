@@ -5,7 +5,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import {
+  HttpClientTestingModule,
+  HttpTestingController,
+} from '@angular/common/http/testing';
 import { ToastrModule } from 'ngx-toastr';
 import { CartComponent } from './cart.component';
 import { BehaviorSubject } from 'rxjs';
@@ -16,11 +19,14 @@ describe('CartComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CartComponent ],
-      imports:[ TranslateModule.forRoot(), RouterTestingModule, HttpClientTestingModule, ToastrModule.forRoot()],
-
-    })
-    .compileComponents();
+      declarations: [CartComponent],
+      imports: [
+        TranslateModule.forRoot(),
+        RouterTestingModule,
+        HttpClientTestingModule,
+        ToastrModule.forRoot(),
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -33,28 +39,22 @@ describe('CartComponent', () => {
     expect(component).toBeTruthy();
   });
 
-
   it('checking the instance of Product Service', () => {
-
-
     const productService = fixture.debugElement.injector.get(ProductService);
     expect(productService.currentCartSubject).toBeInstanceOf(BehaviorSubject);
+  });
 
-   });
+  it('should call notificationService showSuccess on component load', () => {
+    const notificationService =
+      fixture.debugElement.injector.get(NotificationService);
 
-   it('should call notificationService showSuccess on component load', () => 
-   {
-    const notificationService = fixture.debugElement.injector.get(NotificationService);
+    const spy = spyOn(notificationService, 'showSuccess');
+    component.ngOnInit();
+    fixture.detectChanges();
+    expect(spy).toHaveBeenCalled();
+  });
 
-     const spy = spyOn(notificationService, 'showSuccess');
-     component.ngOnInit();
-     fixture.detectChanges();
-     expect(spy).toHaveBeenCalled();
-   });
- 
-
-
-   it("should call the Product Service's removeItemFromCart()", () => {
+  it("should call the Product Service's removeItemFromCart()", () => {
     const productService = fixture.debugElement.injector.get(ProductService);
     spyOn(productService, 'removeItemFromCart');
 
@@ -63,12 +63,11 @@ describe('CartComponent', () => {
     expect(productService.removeItemFromCart).toHaveBeenCalled();
   });
 
-  
   it("should call the Product Service's onQuantityChange()", () => {
     const productService = fixture.debugElement.injector.get(ProductService);
     spyOn(productService, 'onQuantityChange');
 
-    productService.onQuantityChange(null,1);
+    productService.onQuantityChange(null, 1);
     fixture.detectChanges();
     expect(productService.onQuantityChange).toHaveBeenCalled();
   });
@@ -77,7 +76,6 @@ describe('CartComponent', () => {
     const fixture = TestBed.createComponent(CartComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h2').textContent).toContain('Your Cart');
+    expect(compiled.querySelector('h2').textContent).toContain('YourCart');
   });
-
 });

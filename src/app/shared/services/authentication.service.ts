@@ -28,7 +28,6 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string) {
-
     return this.httpClient
       .post<any>('http://localhost:4200/users/authenticate', {
         username,
