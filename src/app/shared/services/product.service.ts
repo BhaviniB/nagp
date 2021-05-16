@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import dataFromJson from 'src/app/shared/inmemory/products.json';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '../models/product';
-import { ThrowStmt } from '@angular/compiler';
 
 @Injectable({ providedIn: 'root' })
 export class ProductService {

@@ -21,12 +21,12 @@ export class BackendHttpInterceptor implements HttpInterceptor {
       request.url === 'http://localhost:4200/users/authenticate'
     ) {
       if (
-        request.body.username == 'bcube___' &&
+        request.body.username == 'bhavinibatra' &&
         request.body.password == 'Nagp@1234'
       ) {
         return of(new HttpResponse({ body: { status: 200 } }));
       } else {
-        return of(new HttpResponse({ body: { status: 403 } }));
+        return of(new HttpResponse({ body: { status: 401 } }));
       }
     }
     next.handle(request);
