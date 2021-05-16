@@ -29,16 +29,15 @@ describe('ProductService', () => {
 
   it('should call removeItemFromCart()', () => {
     const service: ProductService = TestBed.get(ProductService);
-    // spyOn(service, 'removeItemFromCart');
 
     spyOn(service, 'removeItemFromCart');
 
     service.cart = [
       {
         Id: '1',
-        name: 'blah',
+        name: 'sample',
         price: 100,
-        description: 'blah',
+        description: 'sample',
         tags: ['cc'],
         category: 'Electronics',
         image: 'sample',
@@ -46,9 +45,9 @@ describe('ProductService', () => {
       },
       {
         Id: '2',
-        name: 'blah',
+        name: 'sample',
         price: 100,
-        description: 'blah',
+        description: 'sample',
         tags: ['cc'],
         category: 'Electronics',
         image: 'sample',
@@ -56,14 +55,10 @@ describe('ProductService', () => {
       },
     ];
 
-    // const spy = spyOn(service, 'removeItemFromCart').and.callThrough();
     service.removeItemFromCart('1');
-
-    // expect(spy).toHaveBeenCalledTimes(1);
 
     expect(service.removeItemFromCart).toHaveBeenCalledWith('1');
     expect(service.removeItemFromCart).toHaveBeenCalled();
-    // expect(service.cart.length).toEqual(1);
   });
 
   it('should call addItemToCart()', () => {
@@ -81,7 +76,6 @@ describe('ProductService', () => {
         quantity: 1,
       },
     ];
-    // const spy = spyOn(service, 'removeItemFromCart').and.callThrough();
     service.addItemToCart({
       Id: '2',
       name: 'sample name',
@@ -107,7 +101,7 @@ describe('ProductService', () => {
 
   it('should call filterByCategory()', () => {
     const service: ProductService = TestBed.get(ProductService);
-   
+
     const spy = spyOn(service, 'filterByCategory').and.callThrough();
     service.filterByCategory('Electronics');
     expect(service.filterByCategory).toHaveBeenCalled();
@@ -117,17 +111,19 @@ describe('ProductService', () => {
 
   it('should call filterByPrice()', () => {
     const service: ProductService = TestBed.get(ProductService);
-    service.allProducts=[{
-      Id: '1',
-      name: 'sample name',
-      price: 100,
-      description: 'sample desc',
-      tags: ['cc'],
-      category: 'Electronics',
-      image: 'sample',
-      quantity: 1,
-    }];
-   
+    service.allProducts = [
+      {
+        Id: '1',
+        name: 'sample name',
+        price: 100,
+        description: 'sample desc',
+        tags: ['cc'],
+        category: 'Electronics',
+        image: 'sample',
+        quantity: 1,
+      },
+    ];
+
     const spy = spyOn(service, 'filterByPrice').and.callThrough();
     service.filterByPrice('< ₹ 500');
     expect(service.filterByPrice).toHaveBeenCalled();
