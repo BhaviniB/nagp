@@ -1,6 +1,44 @@
 # NagpAngularAssignment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
+## GitHub Link
+
+https://github.com/BhaviniB/nagp
+
+## Link for deployed code
+
+https://nagp.vercel.app/
+
+## Unit test cases
+
+All components have the basic should create test case but the
+main component tested is CartComponent (cart.component.spec.ts) and the service tested is ProductService (product.service.spec.ts)
+
+## All bonus points have been attempted
+
+1. Products have their category and sub category and they can be filtered on basis of category.
+
+2. Price filter has also been implemented.
+
+3. The site supports 2 languages, English and Hindi.
+
+## Some key points
+
+1. Mock JSON has been used for data storage.
+
+2. Bootstrap CSS Library has been used for styling and responsiveness.
+
+3. 'ngx-toastr' has been used to incorporate notifications across site.
+
+4. 'ngx-translate' has been used to provide multiple language support.
+
+5. Auth Guard has been implemented, only a user who has logged in can add cart, view cart and checkout.
+
+6. Login Credentials are.
+
+   * username: bhavinibatra
+   * password: Nagp@1234
+
+7. Link followed to define scalable code structure - https://itnext.io/choosing-a-highly-scalable-folder-structure-in-angular-d987de65ec7
 
 ## Development server
 
